@@ -16,14 +16,33 @@
 	      url: {default: ''}
 	    },
 	    init: function () {
-        alert('clicked');
 	      var data = this.data;
 	      var el = this.el;
 	      el.addEventListener('click', function () {
 		window.open("https://www.w3schools.com", '_blank');
 	      });
 	    }
-	  });        
+	  });       
+
+
+                
+  AFRAME.registerComponent('video-vidhandler', {
+    init: function() {
+      this.vid = document.querySelector("#video");
+      this.vid.play();
+    },
+    // tick: function() {
+    //   if (this.el.object3D.visible == true) {
+    //     if (!this.toggle) {
+    //         this.toggle = true;
+    //         this.vid.play();
+    //     }
+    //   } else {
+    //     this.toggle = false;
+    //     this.vid.pause();
+    //   }
+    // }
+  }); 
 	</script>
 </head>
 	
@@ -64,7 +83,7 @@
     <a-plane position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
       <a-video src="#video"></a-video>
     </a-plane>
-    <a-plane position="0 0 -1.2" width="1" height="1" rotation="-90 0 0" opcatity="1">
+    <a-plane position="0 0 -1.2" width="1" height="1" rotation="-90 0 0" opcatity="1" video-vidhandler>
 			<a-image src="./assets/image.jpg"></a-image>
 		</a-plane>
 		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
