@@ -16,10 +16,11 @@
 	      url: {default: ''}
 	    },
 	    init: function () {
+        alert('clicked');
 	      var data = this.data;
 	      var el = this.el;
 	      el.addEventListener('click', function () {
-		window.open(data.url, '_blank');
+		window.open("https://www.w3schools.com", '_blank');
 	      });
 	    }
 	  });        
@@ -34,7 +35,8 @@
 			<img id="insta_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_instagram-512.png">
 			<img id="linkedin_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_likedin-512.png">
 			<img id="facebook_icon" src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_facebook-512.png">
-		</a-assets>
+      <video id="video" autoplay loop="true" src="./assets/video.mp4"></video>
+    </a-assets>
 		
 		<a-plane rotation="-90 0 0" color="#3199f9" opacity="0.95" navigate-on-click="url: https://www.linkedin.com/in/utkarshgpta/">
 			<a-image src="https://s.gravatar.com/avatar/78156753f9d8feaebe2418780bdc262b?s=250"></a-image>
@@ -60,7 +62,10 @@
 			<a-image src="./assets/image.jpg"></a-image>
 		</a-plane>
     <a-plane position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
-			<a-video autoplay src="https://www.youtube.com/watch?v=xBYDmauqdaw"></a-video>
+      <a-video src="#video"></a-video>
+    </a-plane>
+    <a-plane position="0 0 -1.2" width="1" height="1" rotation="-90 0 0" opcatity="1">
+			<a-image src="./assets/image.jpg"></a-image>
 		</a-plane>
 		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
