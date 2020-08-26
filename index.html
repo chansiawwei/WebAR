@@ -7,6 +7,8 @@
   <title>The AR Business Card</title>
   <meta name="description" content="AR.js Business Card">
   <meta name="author" content="Utkarsh Gupta">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+
   <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 	<script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 
@@ -24,25 +26,23 @@
 	    }
 	  });       
 
+    
+    AFRAME.registerComponent('mappoint-handler', {
 
-                
-  AFRAME.registerComponent('video-vidhandler', {
-    init: function() {
-      this.vid = document.querySelector("#video");
-      this.vid.play();
-    },
-    // tick: function() {
-    //   if (this.el.object3D.visible == true) {
-    //     if (!this.toggle) {
-    //         this.toggle = true;
-    //         this.vid.play();
-    //     }
-    //   } else {
-    //     this.toggle = false;
-    //     this.vid.pause();
-    //   }
-    // }
-  }); 
+init: function() {
+  //console.log("I was triggered");
+  const marker3 = document.querySelector("#marker3");
+  const imgMap = document.querySelector("#img-map");
+
+  marker3.addEventListener('click', function(ev, target) {
+    const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
+    if (imgMap && intersectedElement === imgMap) {
+      console.log("Clicked");
+      document.location.href = "https://goo.gl/maps/gRsth6SHo5AgwMbT7";
+    }
+  });
+}
+});
 	</script>
 </head>
 	
@@ -83,9 +83,9 @@
     <a-plane position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
       <a-video src="#video"></a-video>
     </a-plane>
-    <a-plane position="0 0 -1.2" width="1" height="1" rotation="-90 0 0" opcatity="1" video-vidhandler>
-			<a-image src="./assets/image.jpg"></a-image>
-		</a-plane>
+    <a-plane id="img-map"  material='transparent:true;src:#map-point' position="0 0 -1.2" width="1" height="1" rotation="-90 0 0" opcatity="1">
+    </a-plane>
+
 		<a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
 		<a-marker-camera preset='hiro'></a-marker-camera>
 	</a-scene>
