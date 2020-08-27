@@ -206,7 +206,7 @@
         color="black" width="1" z-offset="0.1"></a-text>
     </a-plane>
 
-    <a-plane position="0 0 0.8" color="transparent" opacity="0" width="2" height="0.3" rotation="-90 0 0"   navigate-on-click="url: https://www.linkedin.com/">
+    <a-plane id='social' position="0 0 0.8" color="transparent" opacity="0" width="2" height="0.3" rotation="-90 0 0"   navigate-on-click="url: https://www.linkedin.com/">
       <a-box src="#github_icon" position="-0.4 0 0" depth="0.15" height="0.15" width="0.15"
         navigate-on-click="url: http://github.com/">
         <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
@@ -236,7 +236,7 @@
       rotation="-90 0 0" opcatity="1">
     </a-plane>
 
-    <a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
+    <a-entity id="camera" cursor="rayOrigin: mouse" raycaster="objects: #social"></a-entity>
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
