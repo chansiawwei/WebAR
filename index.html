@@ -190,7 +190,7 @@ var toggleEl = document.querySelector('#social')
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs='trackingMethod: best;'>
+  <a-scene embedded arjs='trackingMethod: best;' cursor="rayOrigin: mouse" raycaster="objects: #social">
 
     <a-assets>
       <img id="github_icon"
@@ -243,7 +243,7 @@ var toggleEl = document.querySelector('#social')
       rotation="-90 0 0" opcatity="1">
     </a-plane>
 
-    <a-entity id="camera" cursor="rayOrigin: mouse" raycaster="objects: #social"></a-entity>
+    <a-entity id="camera" ></a-entity>
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
