@@ -47,7 +47,8 @@
     AFRAME.registerComponent('clickhandler', {
         init: function() {
             this.el.addEventListener('click', () => {
-              window.open("https://www.google.com", '_blank');
+              window.location.href = "https://www.google.com/";
+
             });
     }});
   </script>
