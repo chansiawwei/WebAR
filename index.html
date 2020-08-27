@@ -179,6 +179,12 @@
    }
   }
 });
+
+var toggleEl = document.querySelector('#social')
+        toggleEl.addEventListener('click', function (evt) {
+            toggleEl.emit("clicked"); 
+        });
+
   </script>
 </head>
 
