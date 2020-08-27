@@ -22,7 +22,7 @@
         var data = this.data;
         var el = this.el;
         el.addEventListener('click', function () {
-          window.open("https://www.w3schools.com", '_blank');
+          window.open(data.url, '_blank');
         });
       }
     });
@@ -54,7 +54,7 @@
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embeddedarjs='trackingMethod: best; debugUIEnabled: false;' vr-mode-ui="enabled: false" ar-template>
+  <a-scene embeddedarjs='trackingMethod: best;'>
 
     <a-assets>
       <img id="github_icon"
