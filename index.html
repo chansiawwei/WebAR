@@ -162,7 +162,23 @@
         });
       }
     });
-
+    AFRAME.registerComponent('vidhandler', {
+  init: function () {
+    this.toggle = false;
+    document.querySelector("#video").pause(); //reference to the video
+  },
+  tick:function(){  
+   if(document.querySelector("#video_plane").object3D.visible == true){
+     if(!this.toggle){
+       this.toggle = true;
+       document.querySelector("#video").play();
+     }
+   }else{
+     this.toggle = false;
+     document.querySelector("#video").pause();
+   }
+  }
+});
   </script>
 </head>
 
@@ -178,7 +194,7 @@
         src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_likedin-512.png">
       <img id="facebook_icon"
         src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_facebook-512.png">
-      <video id="video" autoplay loop="true" src="https://www.youtube.com/watch?v=668nUCeBHyY"></video>
+      <video id="video" autoplay loop="true" src="./assets/video.mp4"></video>
 
     </a-assets>
 
@@ -213,8 +229,8 @@
     <a-plane position="1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1" clickhandler>
       <a-image src="./assets/image.jpg"></a-image>
     </a-plane>
-    <a-plane position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
-      <a-video src="#video"></a-video>
+    <a-plane id="video_plane" position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
+      <a-video src="#video" vidhandler></a-video>
     </a-plane>
     <a-plane id="img-map" material='transparent:true;src:#map-point' position="0 0 -1.2" width="1" height="1"
       rotation="-90 0 0" opcatity="1">
