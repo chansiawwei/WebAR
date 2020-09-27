@@ -1,119 +1,3 @@
-<!-- <!doctype html>
-
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-
-  <title>The AR Business Card</title>
-  <meta name="description" content="AR.js Business Card">
-  <meta name="author" content="Utkarsh Gupta">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-
-  <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
-
-  <script>
-    AFRAME.registerComponent('navigate-on-click', {
-      schema: {
-        url: { default: '' }
-      },
-      init: function () {
-        var data = this.data;
-        var el = this.el;
-        el.addEventListener('click', function () {
-          window.open(data.url, '_blank');
-        });
-      }
-    });
-
-
-    AFRAME.registerComponent('mappoint-handler', {
-
-      init: function () {
-        //console.log("I was triggered");
-        // const marker3 = document.querySelector("#marker3");
-        const imgMap = document.querySelector("#img-map");
-
-        imgMap.addEventListener('click', function (ev, target) {
-          const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-          if (imgMap && intersectedElement === imgMap) {
-            document.location.href = "https://goo.gl/maps/gRsth6SHo5AgwMbT7";
-          }
-        });
-      }
-    });
-
-    AFRAME.registerComponent('clickhandler', {
-        init: function() {
-            this.el.addEventListener('click', () => {
-              alert('Clicked')
-              });
-    }});
-  </script>
-</head>
-
-<body style='margin : 0px; overflow: hidden;'>
-  <a-scene embeddedarjs='trackingMethod: best;'>
-
-    <a-assets>
-      <img id="github_icon"
-        src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_github-512.png">
-      <img id="insta_icon"
-        src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_instagram-512.png">
-      <img id="linkedin_icon"
-        src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_likedin-512.png">
-      <img id="facebook_icon"
-        src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_facebook-512.png">
-      <video id="video" autoplay loop="true" src="https://www.youtube.com/watch?v=668nUCeBHyY"></video>
-    </a-assets>
-
-    <a-plane rotation="-90 0 0" color="#3199f9" opacity="0.95"
-      navigate-on-click="url: https://www.linkedin.com/in/utkarshgpta/">
-      <a-image src="https://s.gravatar.com/avatar/78156753f9d8feaebe2418780bdc262b?s=250"></a-image>
-      <a-text align="center"
-        value="Hello, World!\nThis is a Virtual business card.\nMade by using AR.JS and A FRAME \nFind below the links to various platforms.\P.S.Exhibits random behaviour when opening links."
-        color="black" width="1" z-offset="0.1"></a-text>
-    </a-plane>
-
-    <a-plane position="0 0 0.8" color="transparent" opacity="0" width="2" height="0.3" rotation="-90 0 0">
-      <a-box src="#github_icon" position="-0.4 0 0" depth="0.15" height="0.15" width="0.15"
-        navigate-on-click="url: http://github.com/chansiawwei" >
-        <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
-      </a-box>
-      <a-box src="#insta_icon" position="0 0 0" depth="0.15" height="0.15" width="0.15"
-        navigate-on-click="url: http://instagram.com/" >
-        <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
-      </a-box>
-      <a-box src="#linkedin_icon" position="0.4 0 0" depth="0.15" height="0.15" width="0.15"
-      navigate-on-click="url: http://instagram.com/" >
-        <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
-      </a-box>
-      <a-box src="#facebook_icon" position="0.8 0 0" depth="0.15" height="0.15" width="0.15"
-      navigate-on-click="url: http://instagram.com/" >
-        <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
-      </a-box>
-    </a-plane>
-
-    <a-plane position="1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1"  clickhandler>
-      <a-image src="./assets/image.jpg"></a-image>
-    </a-plane>
-    <a-plane position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
-      <a-video src="#video"></a-video>
-    </a-plane>
-    <a-plane id="img-map" material='transparent:true;src:#map-point' position="0 0 -1.2" width="1" height="1"
-      rotation="-90 0 0" opcatity="1">
-    </a-plane>
-
-    <a-entity id="camera" cursor="rayOrigin: mouse"></a-entity>
-    <a-marker-camera preset='hiro'></a-marker-camera>
-  </a-scene>
-</body>
-
-</html>
- -->
-
-
 <!doctype html>
 
 <html lang="en">
@@ -124,8 +8,12 @@
   <title>TESTING WEB AR Business Card</title>
   <meta name="description" content="AR.js Business Card">
   <!-- <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script> -->
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
-    <script src="https://unpkg.com/aframe-map/dist/aframe-map.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  <script src="https://unpkg.com/aframe-map/dist/aframe-map.min.js"></script>
   <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
 
   <script>
@@ -165,33 +53,71 @@
       }
     });
     AFRAME.registerComponent('vidhandler', {
-  init: function () {
-    this.toggle = false;
-    document.querySelector("#video").pause(); //reference to the video
-  },
-  tick:function(){  
-   if(document.querySelector("#video_plane").object3D.visible == true){
-     if(!this.toggle){
-       this.toggle = true;
-       document.querySelector("#video").play();
-     }
-   }else{
-     this.toggle = false;
-     document.querySelector("#video").pause();
-   }
-  }
-});
+      init: function () {
+        this.toggle = false;
+        document.querySelector("#video").pause(); //reference to the video
+      },
+      tick: function () {
+        if (document.querySelector("#video_plane").object3D.visible == true) {
+          if (!this.toggle) {
+            this.toggle = true;
+            document.querySelector("#video").play();
+          }
+        } else {
+          this.toggle = false;
+          document.querySelector("#video").pause();
+        }
+      }
+    });
 
-var toggleEl = document.querySelector('#social')
-        toggleEl.addEventListener('click', function (evt) {
-            toggleEl.emit("clicked"); 
-            alert('click')
-        });
+    var toggleEl = document.querySelector('#social')
+    toggleEl.addEventListener('click', function (evt) {
+      toggleEl.emit("clicked");
+      alert('click')
+    });
 
   </script>
 </head>
 
 <body style='margin : 0px; overflow: hidden;'>
+  <a style="padding:10px;display:block;" href="http://androidcss.com/css/css3-floating-button-tutorial/"
+    target="_blank">Click here for complete tutorial</a>
+
+  <!-- Code begins here -->
+
+  <div class="fab-container">
+    <div class="fab fab-icon-holder">
+      <i class="fas fa-question"></i>
+    </div>
+
+    <ul class="fab-options">
+      <li>
+        <span class="fab-label">Documentation</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-file-alt"></i>
+        </div>
+      </li>
+      <li>
+        <span class="fab-label">Video Tutorials</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-video"></i>
+        </div>
+      </li>
+      <li>
+        <span class="fab-label">Live Chat</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-comments"></i>
+        </div>
+      </li>
+      <li>
+        <span class="fab-label">Feedback</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-comment-alt"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+
   <a-scene embedded arjs='trackingMethod: best;' cursor="fuse: false; rayOrigin: mouse" raycaster="objects: #social">
 
     <a-assets>
@@ -203,17 +129,17 @@ var toggleEl = document.querySelector('#social')
         src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_likedin-512.png">
       <img id="facebook_icon"
         src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_facebook-512.png">
-      <video id="video" muted  autoplay loop="true" src="./assets/video.mp4"></video>
+      <video id="video" muted autoplay loop="true" src="./assets/video.mp4"></video>
 
     </a-assets>
 
-    <a-plane rotation="-90 0 0"  opacity="1"
-      navigate-on-click="url: https://www.linkedin.com/">
+    <a-plane rotation="-90 0 0" opacity="1" navigate-on-click="url: https://www.linkedin.com/">
       <a-image src="./assets/image.jpg"></a-image>
-     
+
     </a-plane>
 
-    <a-plane id='social' position="0 0 0.8" color="transparent" opacity="0" width="2" height="0.3" rotation="-90 0 0"   navigate-on-click="url: https://www.linkedin.com/">
+    <a-plane id='social' position="0 0 0.8" color="transparent" opacity="0" width="2" height="0.3" rotation="-90 0 0"
+      navigate-on-click="url: https://www.linkedin.com/">
       <a-box src="#github_icon" position="-0.4 0 0" depth="0.15" height="0.15" width="0.15"
         navigate-on-click="url: http://github.com/">
         <a-animation attribute="rotation" dur="7000" to="0 360 0" easing="linear" repeat="indefinite"></a-animation>
@@ -234,17 +160,17 @@ var toggleEl = document.querySelector('#social')
 
 
     <a-plane position="1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="0.95" clickhandler>
-      <a-image src="https://s.gravatar.com/avatar/78156753f9d8feaebe2418780bdc262b?s=250"></a-image>
+      <!-- <a-image src="https://s.gravatar.com/avatar/78156753f9d8feaebe2418780bdc262b?s=250"></a-image> -->
       <a-text align="center"
-      value="Hello, World!\nThis is a business card.\nMade by Chan siaw Wei\n Testing ONLY v1.0.1, A-FRAME v1.0 \nFind below the links to various platforms.\P.S.Exhibits random behaviour when opening links."
-      color="black" width="1" z-offset="0.1"></a-text>
+        value="Hello, World!\nThis is a business card.\nMade by Chan siaw Wei\n Testing ONLY v1.0.1, A-FRAME v1.0 \nFind below the links to various platforms.\P.S.Exhibits random behaviour when opening links."
+        color="black" width="1" z-offset="0.1"></a-text>
     </a-plane>
     <a-plane id="video_plane" position="-1.2 0 0" width="1" height="1" rotation="-90 0 0" opcatity="1">
       <a-video src="#video" vidhandler></a-video>
     </a-plane>
 
 
-    <a-entity id="camera" ></a-entity>
+    <a-entity id="camera"></a-entity>
     <a-marker-camera preset='hiro'></a-marker-camera>
   </a-scene>
 </body>
