@@ -1,7 +1,4 @@
-* {
-	margin: 0;
-	padding: 0;
-}
+
 
 body {
 	font-family: monospace;
@@ -82,9 +79,5 @@ body {
 	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 	margin-right: 10px;
 }
-
-
-
-
 
 
