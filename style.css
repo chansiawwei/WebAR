@@ -6,8 +6,8 @@ body {
 }
 .fab-container {
 	position: fixed;
-	bottom: 50px;
-	right: 50px;
+	bottom: 10px;
+	right: 10px;
 	z-index: 999;
 	cursor: pointer;
 }
@@ -81,3 +81,6 @@ body {
 }
 
 
+body > a-scene > div.a-enter-vr > button{
+    display: none
+}
